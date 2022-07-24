@@ -1,73 +1,33 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import { MenuItem, PopularProduct } from "../components";
+import { MenuItem, Navigation, PopularProduct } from "../components";
 
 const Home: NextPage = () => {
   return (
     <>
-      <div className="px-14">
+      <div className="px-6 md:px-14">
         <Head>
           <title>Yannal.</title>
           <link rel="icon" href="/logo-dark.png" />
         </Head>
 
         <header className="w-full min-h-screen flex flex-col pb-10">
-          <nav className="flex-initial flex justify-between items-center py-8">
-            <h2 className="text-2xl font-medium">yannal.</h2>
-            <ul className="flex-1 flex justify-center gap-6">
-              <li className="px-2 border-b-2 border-primary">
-                <a href="#" className="font-medium">
-                  menu
-                </a>
-              </li>
-              <li className="px-2">
-                <a href="#" className="font-medium">
-                  about us
-                </a>
-              </li>
-              <li className="px-2">
-                <a href="#" className="font-medium">
-                  our specials
-                </a>
-              </li>
-              <li className="px-2">
-                <a href="#" className="font-medium">
-                  our locations
-                </a>
-              </li>
-              <li className="px-2">
-                <a href="#" className="font-medium">
-                  our chefs
-                </a>
-              </li>
-            </ul>
-            <div className="flex gap-6">
-              <a href="#">
-                <img src="/icons/search.svg" alt="search" />
-              </a>
-              <a href="#">
-                <img src="/icons/basket.svg" alt="basket" />
-              </a>
-              <a href="#">
-                <img src="/icons/person.svg" alt="profile" />
-              </a>
-            </div>
-          </nav>
+          <Navigation />
           <section className="flex-auto flex">
             <div className="flex-1 flex flex-col justify-center">
-              <h5 className="text-sm uppercase text-primary font-medium">
+              <h5 className="text-xs md:text-sm uppercase text-primary font-medium">
                 Now taking online ordres
               </h5>
               <div className="flex">
-                <h1 className="text-[130px] leading-[140px] text-primary font-medium font-secondary">
+                <h1 className="text-[60px] md:text-[130px] leading[60px] md:leading-[140px] text-primary font-medium font-secondary">
                   kababs
                 </h1>
-                <h2 className="text-3xl font-bold text-gray-300 -rotate-90 relative left-6 bottom-2">
+                <h2 className="text-sm md:text-3xl font-bold text-gray-300 -rotate-90 relative left-6 bottom-2">
                   $14.97
                 </h2>
               </div>
-              <p className="">
+              <p className="text-xs sm:text-sm md:text-md">
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam
                 nemo illum dolores aperiam. Quis illum cupiditate est a at
                 dignissimos adipisci possimus! Porro animi, soluta expedita
@@ -76,13 +36,13 @@ const Home: NextPage = () => {
               <div className="py-16 flex gap-6 text-white">
                 <a
                   href="#"
-                  className="flex-1 text-center py-3 rounded-lg shadow-2xl shadow-primary/70 bg-primary hover:bg-red-700 -skew-x-12"
+                  className="text-sm sm:text-md flex-1 text-center py-3 rounded-lg shadow-2xl shadow-primary/70 bg-primary hover:bg-red-700 -skew-x-12"
                 >
                   Add To Cart
                 </a>
                 <a
                   href="#"
-                  className="flex-1 py-3 text-center rounded-lg shadow-2xl shadow-gray-800/70 bg-gray-800 hover:bg-gray-900 -skew-x-12"
+                  className="text-sm sm:text-md flex-1 py-3 text-center rounded-lg shadow-2xl shadow-gray-800/70 bg-gray-800 hover:bg-gray-900 -skew-x-12"
                 >
                   Book a Table
                 </a>
@@ -98,7 +58,7 @@ const Home: NextPage = () => {
                 </div>
               </div>
             </div>
-            <div className="flex-1 relative -z-10 bg-[url('/hero.png')] bg-no-repeat bg-center bg-contain">
+            <div className="hidden lg:block flex-1 relative -z-10 bg-[url('/hero.png')] bg-no-repeat bg-center bg-contain">
               <img
                 src="/leaves/leaf-1.svg"
                 alt="leaf"
@@ -139,9 +99,9 @@ const Home: NextPage = () => {
             src="/icons/curved-line.svg"
             alt="line"
             width={180}
-            className="relative bottom-4 right-20"
+            className="hidden xs:block relative bottom-4 right-20"
           />
-          <div className="flex-1 w-full h-full flex justify-around p-8">
+          <div className="flex-1 w-full h-full flex flex-col lg:flex-row justify-around gap-4 p-8">
             <PopularProduct
               imageURL={"hot-wings.png"}
               rating={4.5}
@@ -178,7 +138,7 @@ const Home: NextPage = () => {
           />
         </section>
 
-        <section className="flex items-center w-full min-h-screen px-10 py-16">
+        <section className="hidden xl:flex items-center w-full min-h-screen px-10 py-16">
           <div className="w-1/3 px-20">
             <ul>
               <li className="my-6">
@@ -310,7 +270,7 @@ const Home: NextPage = () => {
           <h2 className="text-5xl font-bold text-primary font-secondary mb-6">
             Amazing Food Served With Delicacy
           </h2>
-          <div className="grid gap-16 grid-cols-3 grid-rows-2 flex-1 w-full h-full px-24 py-8">
+          <div className="grid gap-8 lg:gap-16 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-rows-6 md:grid-rows-3 lg:grid-rows-2 flex-1 w-full h-full px-8 sm:px-24 py-8">
             <MenuItem
               imageURL={"dishim.png"}
               rating={5}
@@ -362,18 +322,18 @@ const Home: NextPage = () => {
           <img
             src="/leaves/leaf-7.svg"
             alt="leaf"
-            className="absolute top-0 -left-[160px]"
+            className="hidden lg:block absolute top-0 -left-[160px]"
           />
           <img
             src="/leaves/leaf-2.svg"
             alt="leaf"
-            className="absolute top-1/2 bottom-1/2 right-[0px]"
+            className="hidden sm:block absolute top-1/2 bottom-1/2 right-[0px]"
           />
         </section>
       </div>
 
       <section className="flex justify-around items-center w-full min-h-screen py-16 bg-red-100">
-        <div className="w-1/2 flex justify-center">
+        <div className="hidden md:flex w-1/2 justify-center">
           <div className="flex flex-col justify-between items-stretch w-[260px] h-[500px] p-4 rounded-3xl bg-white relative shadow-2xl">
             <div className="flex justify-between items-center py-2">
               <img src="/phone/menu.svg" alt="menu" />
@@ -530,7 +490,7 @@ const Home: NextPage = () => {
             />
           </div>
         </div>
-        <div className="flex flex-col justify-center items-start gap-4 p-12 w-1/2">
+        <div className="flex-1 flex flex-col justify-center items-start gap-4 p-12 w-1/2">
           <h2 className="text-sm font-bold uppercase text-gray-800 ">
             Download Our App
           </h2>
@@ -542,7 +502,7 @@ const Home: NextPage = () => {
               All in one app.
             </h1>
           </div>
-          <p className="text-sm w-2/3">
+          <p className="text-sm md:text-base w-full xl:w-2/3">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
             eum laudantium tenetur voluptates quidem at pariatur ipsa quasi
             molestiae deleniti dignissimos.
@@ -558,7 +518,7 @@ const Home: NextPage = () => {
         </div>
       </section>
 
-      <section className="flex flex-col items-center w-full min-h-screen text-center px-32 py-16 relative">
+      <section className="flex flex-col items-center w-full text-center px-8 md:px-32 py-16 sm:pb-32 relative">
         <h4 className="text-sm font-bold uppercase text-gray-700 pb-4">
           Testimonial
         </h4>
@@ -569,16 +529,16 @@ const Home: NextPage = () => {
           src="/icons/curved-line.svg"
           alt="line"
           width={180}
-          className="relative bottom-4 left-20"
+          className="hidden xs:block relative bottom-4 left-20"
         />
-        <div className="flex-1 w-full h-full flex justify-around px-8 py-16">
+        <div className="flex-1 w-full h-full flex flex-col xl:flex-row gap-8 justify-around px-8 py-16">
           <div className="flex-1 flex gap-4">
-            <div className="w-24 aspect-square">
+            <div className="hidden md:block w-24 aspect-square">
               <img
                 src="/profile-photos/woman.png"
                 alt="woman"
                 width={80}
-                className="inline-block rounded-lg"
+                className="inline-block rounded-lg min-w-[80px]"
               />
             </div>
             <div className="flex flex-col gap-2 text-left">
@@ -614,22 +574,21 @@ const Home: NextPage = () => {
                   className="inline"
                 />
               </div>
-              <p className="">
+              <p className="text-xs sm:text-sm md:text-base">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde
                 quam magnam, numquam aliquam illum voluptate ducimus sunt nisi
                 possimus laudantium, quibusdam quis ipsam quod voluptates soluta
-                ullam itaque quia a cupiditate placeat iure eum, quo illo
-                eveniet. Beatae vel ab aliquid minima expedita cupiditate ipsam.
+                ullam itaque quia.
               </p>
             </div>
           </div>
           <div className="flex-1 flex gap-4">
-            <div className="w-24 aspect-square">
+            <div className="hidden md:block w-24 aspect-square">
               <img
                 src="/profile-photos/man.png"
                 alt="man"
                 width={80}
-                className="inline-block rounded-lg"
+                className="inline-block rounded-lg min-w-[80px]"
               />
             </div>
             <div className="flex flex-col gap-2 text-left">
@@ -672,19 +631,15 @@ const Home: NextPage = () => {
                   className="inline"
                 />
               </div>
-              <p className="">
+              <p className="text-xs sm:text-sm md:text-base">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
                 in architecto praesentium earum vitae dolores inventore suscipit
-                nemo possimus repudiandae magni, nulla dolore totam. Odit, harum
-                eligendi qui illo, earum in delectus modi dolorum quas
-                consequatur quo nostrum! Neque ut autem incidunt unde quaerat
-                itaque ab reiciendis beatae accusamus dolorum expedita cum ipsa
-                aut facilis, necessitatibus totam deleniti, similique ullam.
+                nemo possimus repudiandae magni, nulla dolore totam.
               </p>
             </div>
           </div>
         </div>
-        <div className="flex flex-col items-center gap-2 bg-white absolute -bottom-16 z-10 w-3/5 p-6 rounded-[40px] border-2 border-primary">
+        <div className="hidden sm:flex flex-col items-center gap-2 bg-white absolute -bottom-16 z-10 w-3/5 p-6 rounded-[40px] border-2 border-primary">
           <h3 className="text-xl font-bold">Get Special Discounts</h3>
           <p className="text-sm text-medium mb-4">
             Input email address and complete your subscription to get our
@@ -699,17 +654,17 @@ const Home: NextPage = () => {
             <input
               type="submit"
               value="Subscribe"
-              className="px-4 py-2 text-white rounded-full bg-primary hover:bg-red-700"
+              className="px-4 py-2 text-white rounded-full cursor-pointer bg-primary hover:bg-red-700"
             />
           </div>
         </div>
       </section>
 
-      <footer className="flex flex-col items-center w-full px-32 bg-gray-800 text-white">
-        <div className="flex justify-between w-full pt-32">
+      <footer className="flex flex-col items-center w-full px-8 md:px-32 bg-gray-800 text-white">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 grid-rows-4 sm:grid-rows-2 lg:grid-rows-1 gap-12 w-full pt-32">
           <div className="flex flex-col gap-8">
             <h2 className="text-2xl font-bold">yannal.</h2>
-            <div className="flex justify-between items-center gap-6">
+            <div className="flex items-center gap-6">
               <a href="#">
                 <i className="fab fa-facebook-f hover:text-blue-500 transition-color duration-300"></i>
               </a>
@@ -727,21 +682,21 @@ const Home: NextPage = () => {
           <div className="flex flex-col gap-6">
             <h4 className="text-xl font-bold">Contact</h4>
             <ul className="space-y-3">
-              <li className="flex gap-2">
+              <li className="flex gap-4">
                 <img src="/icons/location.svg" alt="location" />
                 <p>Brooklyn, New York</p>
               </li>
-              <li className="flex gap-2">
+              <li className="flex gap-4">
                 <img src="/icons/phone.svg" alt="phone" />
                 <p>718 254 658</p>
               </li>
-              <li className="flex gap-2">
+              <li className="flex gap-4">
                 <img src="/icons/mail.svg" alt="mail" />
                 <p>support@yannal.com</p>
               </li>
             </ul>
           </div>
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-6 lg:place-self-end">
             <h4 className="text-xl font-bold">Support</h4>
             <ul className="space-y-3">
               <li>
@@ -776,7 +731,9 @@ const Home: NextPage = () => {
             </ul>
           </div>
         </div>
-        <p className="p-4 pt-16">©2022 Yannal Resturant</p>
+        <p className="p-4 pt-16 text-xs sm:text-sm md:text-base">
+          ©2022 Yannal Resturant
+        </p>
       </footer>
     </>
   );

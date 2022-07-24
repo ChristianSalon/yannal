@@ -13,6 +13,9 @@ module.exports = {
       fontFamily: {
         secondary: ["Abhaya Libre", "sans-serif"],
       },
+      screens: {
+        xs: "350px",
+      },
     },
   },
   plugins: [],
