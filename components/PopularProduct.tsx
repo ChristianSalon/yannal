@@ -18,19 +18,33 @@ const PopularProduct: React.FC<Props> = ({
 }) => {
   const getRatingStars = () => {
     let stars = [];
-    let i = rating;
-    for (let j = 1; j < 6; j++) {
-      if (rating >= j)
+    for (let i = 1; i < 6; i++) {
+      if (rating >= i)
         stars.push(
-          <img src="/icons/full-star.svg" alt="star" className="inline" />
+          <img
+            key={i}
+            src="/icons/full-star.svg"
+            alt="star"
+            className="inline"
+          />
         );
-      else if (rating + 0.5 === j)
+      else if (rating + 0.5 === i)
         stars.push(
-          <img src="/icons/half-star.svg" alt="half star" className="inline" />
+          <img
+            key={i}
+            src="/icons/half-star.svg"
+            alt="half star"
+            className="inline"
+          />
         );
       else
         stars.push(
-          <img src="/icons/no-star.svg" alt="no star" className="inline" />
+          <img
+            key={i}
+            src="/icons/no-star.svg"
+            alt="no star"
+            className="inline"
+          />
         );
     }
     return stars;

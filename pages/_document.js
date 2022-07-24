@@ -18,6 +18,7 @@ class MyDocument extends Document {
           <script
             src="https://kit.fontawesome.com/f7f05d1812.js"
             crossOrigin="anonymous"
+            async
           ></script>
         </Head>
         <body>
