@@ -1,9 +1,7 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import { MenuItem, PopularProduct } from "../components";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 const Home: NextPage = () => {
   return (
@@ -188,6 +186,7 @@ const Home: NextPage = () => {
                   <div className="p-2 rounded-lg bg-white aspect-square flex justify-center items-center">
                     <Image
                       src="/icons/coffee.png"
+                      alt="cofee"
                       width={32}
                       height={32}
                       className="aspect-square"
@@ -201,6 +200,7 @@ const Home: NextPage = () => {
                   <div className="p-2 rounded-lg bg-white aspect-square flex justify-center items-center">
                     <Image
                       src="/icons/fast-food.png"
+                      alt="fast food"
                       width={32}
                       height={32}
                       className="aspect-square"
@@ -214,6 +214,7 @@ const Home: NextPage = () => {
                   <div className="p-2 rounded-lg bg-white aspect-square flex justify-center items-center">
                     <Image
                       src="/icons/pizza.png"
+                      alt="pizza"
                       width={32}
                       height={32}
                       className="aspect-square"
@@ -227,6 +228,7 @@ const Home: NextPage = () => {
                   <div className="p-2 rounded-lg bg-white aspect-square flex justify-center items-center">
                     <Image
                       src="/icons/desi-menu.png"
+                      alt="desi menu"
                       width={32}
                       height={32}
                       className="aspect-square"
@@ -240,6 +242,7 @@ const Home: NextPage = () => {
                   <div className="p-2 rounded-lg bg-white aspect-square flex justify-center items-center">
                     <Image
                       src="/icons/desserts.png"
+                      alt="desserts"
                       width={32}
                       height={32}
                       className="aspect-square"

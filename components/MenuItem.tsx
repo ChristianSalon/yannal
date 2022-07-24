@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 
 interface Props {
   imageURL: string;
@@ -40,6 +39,7 @@ const MenuItem: React.FC<Props> = ({
     <div className="flex flex-col gap-1 justify-center items-start text-left p-6 rounded-3xl border-[1px] border-gray-200 shadow-xl">
       <img
         src={`/dishes/${imageURL}`}
+        alt={name}
         width={150}
         height={150}
         className="self-center drop-shadow-xl"

@@ -38,7 +38,7 @@ const PopularProduct: React.FC<Props> = ({
 
   return (
     <div className="flex flex-col gap-1 justify-center items-center">
-      <Image src={`/dishes/${imageURL}`} width={150} height={150} />
+      <Image src={`/dishes/${imageURL}`} alt={name} width={150} height={150} />
       <div className="my-2">{getRatingStars()}</div>
       <h6 className="text-sm">{category}</h6>
       <h2 className="mb-6 text-2xl font-bold text-gray-900">{name}</h2>
