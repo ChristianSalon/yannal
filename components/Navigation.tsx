@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
 import React, { useState } from "react";
+import { NavigationItem } from ".";
+import { Page } from "../types";
 
 const Navigation: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [activePage, setActivePage] = useState<Page>(Page.Menu);
 
   const topLineVariants = {
     open: {
@@ -56,31 +59,36 @@ const Navigation: React.FC = () => {
       <nav className="hidden flex-initial lg:flex justify-between items-center py-8">
         <h2 className="text-2xl font-medium">yannal.</h2>
         <ul className="flex-1 flex justify-center gap-6">
-          <li className="px-2 border-b-2 border-primary">
-            <a href="#" className="font-medium">
-              menu
-            </a>
-          </li>
-          <li className="px-2">
-            <a href="#" className="font-medium">
-              about us
-            </a>
-          </li>
-          <li className="px-2">
-            <a href="#" className="font-medium">
-              our specials
-            </a>
-          </li>
-          <li className="px-2">
-            <a href="#" className="font-medium">
-              our locations
-            </a>
-          </li>
-          <li className="px-2">
-            <a href="#" className="font-medium">
-              our chefs
-            </a>
-          </li>
+          <NavigationItem
+            name="menu"
+            page={Page.Menu}
+            activePage={activePage}
+            setActivePage={setActivePage}
+          />
+          <NavigationItem
+            name="about us"
+            page={Page.AboutUs}
+            activePage={activePage}
+            setActivePage={setActivePage}
+          />
+          <NavigationItem
+            name="our specials"
+            page={Page.OurSpecials}
+            activePage={activePage}
+            setActivePage={setActivePage}
+          />
+          <NavigationItem
+            name="our locations"
+            page={Page.OurLocations}
+            activePage={activePage}
+            setActivePage={setActivePage}
+          />
+          <NavigationItem
+            name="our chefs"
+            page={Page.OurChefs}
+            activePage={activePage}
+            setActivePage={setActivePage}
+          />
         </ul>
         <div className="flex gap-6">
           <a href="#">

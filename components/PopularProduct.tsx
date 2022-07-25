@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 interface Props {
   imageURL: string;
@@ -16,6 +17,19 @@ const PopularProduct: React.FC<Props> = ({
   name,
   price,
 }) => {
+  const childrenVariants = {
+    initial: {
+      x: 1000,
+    },
+    show: {
+      x: 0,
+      transition: {
+        type: "spring",
+        duration: 0.6,
+      },
+    },
+  };
+
   const getRatingStars = () => {
     let stars = [];
     for (let i = 1; i < 6; i++) {
@@ -51,7 +65,10 @@ const PopularProduct: React.FC<Props> = ({
   };
 
   return (
-    <div className="flex flex-col gap-1 justify-center items-center p-6 rounded-3xl border-[1px] border-gray-200 shadow-xl">
+    <motion.div
+      variants={childrenVariants}
+      className="flex flex-col gap-1 justify-center items-center p-6 rounded-3xl border-[1px] border-gray-200 shadow-xl"
+    >
       <Image src={`/dishes/${imageURL}`} alt={name} width={150} height={150} />
       <div className="my-2">{getRatingStars()}</div>
       <h6 className="text-sm">{category}</h6>
@@ -60,7 +77,7 @@ const PopularProduct: React.FC<Props> = ({
         <p>Add to Cart</p>
         <p>${price.toFixed(2)}</p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
