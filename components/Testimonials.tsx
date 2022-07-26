@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import React from "react";
 
 const Testimonials: React.FC = () => {
@@ -16,7 +17,13 @@ const Testimonials: React.FC = () => {
         className="hidden xs:block relative bottom-4 left-20"
       />
       <div className="flex-1 w-full h-full flex flex-col xl:flex-row gap-8 justify-around px-8 py-16">
-        <div className="flex-1 flex gap-4">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="flex-1 flex gap-4"
+        >
           <div className="hidden md:block w-24 aspect-square">
             <img
               src="/profile-photos/woman.png"
@@ -65,8 +72,14 @@ const Testimonials: React.FC = () => {
               ullam itaque quia.
             </p>
           </div>
-        </div>
-        <div className="flex-1 flex gap-4">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="flex-1 flex gap-4"
+        >
           <div className="hidden md:block w-24 aspect-square">
             <img
               src="/profile-photos/man.png"
@@ -121,24 +134,24 @@ const Testimonials: React.FC = () => {
               nemo possimus repudiandae magni, nulla dolore totam.
             </p>
           </div>
-        </div>
+        </motion.div>
       </div>
-      <div className="hidden sm:flex flex-col items-center gap-2 bg-white absolute -bottom-16 z-10 w-3/5 p-6 rounded-[40px] border-2 border-primary">
-        <h3 className="text-xl font-bold">Get Special Discounts</h3>
-        <p className="text-sm text-medium mb-4">
+      <div className="flex flex-col items-center gap-2 bg-white sm:absolute -bottom-16 z-10 w-full sm:w-3/5 p-6 rounded-[40px] border-2 border-primary">
+        <h3 className="sm:text-xl font-bold">Get Special Discounts</h3>
+        <p className="text-xs sm:text-sm mb-4">
           Input email address and complete your subscription to get our special
           offer.
         </p>
         <div className="flex gap-2 p-1 rounded-full border-2 border-primary">
           <input
             type="email"
-            placeholder="bob.long@gmail.com"
-            className="ml-6 focus:outline-none"
+            placeholder="Email Address"
+            className="w-full ml-2 sm:ml-6 focus:outline-none text-xs sm:text-base"
           />
           <input
             type="submit"
             value="Subscribe"
-            className="px-4 py-2 text-white rounded-full cursor-pointer bg-primary hover:bg-red-700"
+            className="select-none px-4 py-2 text-xs sm:text-base text-white rounded-full cursor-pointer bg-primary hover:bg-red-700"
           />
         </div>
       </div>

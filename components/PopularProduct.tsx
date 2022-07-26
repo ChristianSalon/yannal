@@ -73,7 +73,7 @@ const PopularProduct: React.FC<Props> = ({
       <div className="my-2">{getRatingStars()}</div>
       <h6 className="text-sm">{category}</h6>
       <h2 className="mb-6 text-2xl font-bold text-gray-900">{name}</h2>
-      <div className="flex justify-around items-center w-40 text-xs text-center p-3 rounded-lg cursor-pointer text-white bg-primary hover:bg-red-700 -skew-x-12 shadow-xl shadow-primary/40">
+      <div className="flex justify-around items-center w-40 text-xs text-center p-3 rounded-lg select-none cursor-pointer text-white bg-primary hover:bg-red-700 -skew-x-12 shadow-xl shadow-primary/40">
         <p>Add to Cart</p>
         <p>${price.toFixed(2)}</p>
       </div>

@@ -1,10 +1,19 @@
+import { motion } from "framer-motion";
 import React from "react";
 
 const MobileApp: React.FC = () => {
   return (
     <section className="flex justify-around items-center w-full min-h-screen py-16 bg-red-100">
       <div className="hidden md:flex w-1/2 justify-center">
-        <div className="flex flex-col justify-between items-stretch w-[260px] h-[500px] p-4 rounded-3xl bg-white relative shadow-2xl">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{
+            x: [-1000, 0],
+            opacity: [1, 1],
+          }}
+          viewport={{ once: true }}
+          className="flex flex-col justify-between items-stretch w-[260px] h-[500px] p-4 rounded-3xl bg-white relative shadow-2xl select-none"
+        >
           <div className="flex justify-between items-center py-2">
             <img src="/phone/menu.svg" alt="menu" />
             <div className="inline-block p-2 rounded-lg shadow-lg shadow-primary/60 bg-primary mr-2">
@@ -131,7 +140,7 @@ const MobileApp: React.FC = () => {
               className="absolute -right-10 top-1"
             />
           </div>
-          <div className="flex justify-around items-center h-12 bg-red-100 rounded-full">
+          <div className="flex justify-around items-center h-12 bg-red-100 shadow-xl shadow-primary/20 rounded-full">
             <div className="flex-1 flex flex-col justify-center items-center">
               <img src="/phone/home.svg" alt="home" width={16} />
               <p className="text-[6px] mt-1">Home</p>
@@ -158,9 +167,18 @@ const MobileApp: React.FC = () => {
             alt="leaves"
             className="absolute bottom-0 -left-12"
           />
-        </div>
+        </motion.div>
       </div>
-      <div className="flex-1 flex flex-col justify-center items-start gap-4 p-12 w-1/2">
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{
+          y: [200, 0],
+          opacity: [0, 1],
+        }}
+        transition={{ ease: "easeOut", duration: 1 }}
+        viewport={{ once: true }}
+        className="flex-1 flex flex-col justify-center items-start gap-4 p-12 w-1/2"
+      >
         <h2 className="text-sm font-bold uppercase text-gray-800 ">
           Download Our App
         </h2>
@@ -185,7 +203,7 @@ const MobileApp: React.FC = () => {
             <img src="/phone/google-play.png" alt="google play" />
           </a>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

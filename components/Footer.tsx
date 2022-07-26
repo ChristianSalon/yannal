@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
         </div>
         <div className="flex flex-col gap-6">
           <h4 className="text-xl font-bold">Contact</h4>
-          <ul className="space-y-3">
+          <ul className="space-y-3 text-sm">
             <li className="flex gap-4">
               <img src="/icons/location.svg" alt="location" />
               <p>Brooklyn, New York</p>
@@ -40,7 +40,7 @@ const Footer: React.FC = () => {
         </div>
         <div className="flex flex-col gap-6 lg:place-self-end">
           <h4 className="text-xl font-bold">Support</h4>
-          <ul className="space-y-3">
+          <ul className="space-y-3 text-sm">
             <li>
               <a href="#">FAQ</a>
             </li>
@@ -57,7 +57,7 @@ const Footer: React.FC = () => {
         </div>
         <div className="flex flex-col gap-6">
           <h4 className="text-xl font-bold">Info</h4>
-          <ul className="space-y-3">
+          <ul className="space-y-3 text-sm">
             <li>
               <a href="#">Dates</a>
             </li>
@@ -73,9 +73,7 @@ const Footer: React.FC = () => {
           </ul>
         </div>
       </div>
-      <p className="p-4 pt-16 text-xs sm:text-sm md:text-base">
-        ©2022 Yannal Resturant
-      </p>
+      <p className="p-4 pt-16 text-xs sm:text-sm">©2022 Yannal Resturant</p>
     </footer>
   );
 };

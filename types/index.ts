@@ -1,3 +1,4 @@
+import Category from "./Category";
 import Page from "./Page";
 
-export { Page };
+export { Page, Category };

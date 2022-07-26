@@ -52,7 +52,7 @@ const Menu: React.FC = () => {
         href="#"
         className="w-44 py-3 px-4 rounded-lg text-sm text-white -skew-x-12 shadow-xl shadow-primary/70 bg-primary hover:bg-red-700"
       >
-        <div className="flex justify-around items-center">
+        <div className="flex justify-around items-center select-none">
           <h6>View Menu</h6>
           <div className="bg-white px-3 py-2 rounded-lg">
             <img src="/icons/right-arrow.svg" alt="arrow" />

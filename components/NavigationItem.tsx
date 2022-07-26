@@ -6,7 +6,7 @@ interface Props {
   name: string;
   page: Page;
   activePage: Page;
-  setActivePage: (page: Page) => void;
+  setActivePage: React.Dispatch<React.SetStateAction<Page>>;
 }
 
 const NavigationItem: React.FC<Props> = ({
@@ -15,9 +15,13 @@ const NavigationItem: React.FC<Props> = ({
   activePage,
   setActivePage,
 }) => {
+  const setPage = () => {
+    setActivePage(page);
+  };
+
   return (
     <li className="px-2 relative">
-      <a href="#" className="font-medium" onClick={() => setActivePage(page)}>
+      <a href="#" className="font-medium" onClick={setPage}>
         {name}
       </a>
       {activePage === page ? (

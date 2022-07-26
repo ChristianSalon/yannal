@@ -57,7 +57,7 @@ const Navigation: React.FC = () => {
   return (
     <>
       <nav className="hidden flex-initial lg:flex justify-between items-center py-8">
-        <h2 className="text-2xl font-medium">yannal.</h2>
+        <h2 className="text-2xl font-semibold">yannal.</h2>
         <ul className="flex-1 flex justify-center gap-6">
           <NavigationItem
             name="menu"

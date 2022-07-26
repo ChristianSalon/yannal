@@ -9,6 +9,7 @@ import NavigationItem from "./NavigationItem";
 import PopularProduct from "./PopularProduct";
 import PopularProducts from "./PopularProducts";
 import Testimonials from "./Testimonials";
+import CategoryItem from "./CategoryItem";
 
 export {
   PopularProduct,
@@ -22,4 +23,5 @@ export {
   PopularProducts,
   Testimonials,
   NavigationItem,
+  CategoryItem,
 };

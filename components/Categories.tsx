@@ -1,26 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { Category } from "../types";
+import { CategoryItem } from ".";
 
 const Categories: React.FC = () => {
+  const [selectedCategory, setSelectedCategory] = useState(Category.Coffee);
+
   const containerVariants = {
     initial: {},
     show: {
       transition: {
         staggerChildren: 0.2,
       },
-    },
-  };
-
-  const childrenVariants = {
-    initial: {
-      y: 500,
-      opacity: 0,
-    },
-    show: {
-      y: 0,
-      opacity: 1,
-      transition: { type: "spring", duration: 1 },
     },
   };
 
@@ -33,76 +25,41 @@ const Categories: React.FC = () => {
           whileInView="show"
           viewport={{ once: true }}
         >
-          <motion.li variants={childrenVariants} className="my-6">
-            <div className="p-2 rounded-lg flex items-center gap-4 -skew-x-12 bg-primary shadow-xl shadow-primary/50">
-              <div className="p-2 rounded-lg bg-white aspect-square flex justify-center items-center">
-                <Image
-                  src="/icons/coffee.png"
-                  alt="cofee"
-                  width={32}
-                  height={32}
-                  className="aspect-square"
-                />
-              </div>
-              <h6 className="text-white">Coffee</h6>
-            </div>
-          </motion.li>
-          <motion.li variants={childrenVariants} className="my-6">
-            <div className="p-2 rounded-lg flex items-center gap-4 cursor-pointer -skew-x-12 hover:bg-red-100">
-              <div className="p-2 rounded-lg bg-white aspect-square flex justify-center items-center">
-                <Image
-                  src="/icons/fast-food.png"
-                  alt="fast food"
-                  width={32}
-                  height={32}
-                  className="aspect-square"
-                />
-              </div>
-              <h6 className="text-gray-500">Fast Food</h6>
-            </div>
-          </motion.li>
-          <motion.li variants={childrenVariants} className="my-6">
-            <div className="p-2 rounded-lg flex items-center gap-4 cursor-pointer -skew-x-12 hover:bg-red-100">
-              <div className="p-2 rounded-lg bg-white aspect-square flex justify-center items-center">
-                <Image
-                  src="/icons/pizza.png"
-                  alt="pizza"
-                  width={32}
-                  height={32}
-                  className="aspect-square"
-                />
-              </div>
-              <h6 className="text-gray-500">Pizza</h6>
-            </div>
-          </motion.li>
-          <motion.li variants={childrenVariants} className="my-6">
-            <div className="p-2 rounded-lg flex items-center gap-4 cursor-pointer -skew-x-12 hover:bg-red-100">
-              <div className="p-2 rounded-lg bg-white aspect-square flex justify-center items-center">
-                <Image
-                  src="/icons/desi-menu.png"
-                  alt="desi menu"
-                  width={32}
-                  height={32}
-                  className="aspect-square"
-                />
-              </div>
-              <h6 className="text-gray-500">Desi Menu</h6>
-            </div>
-          </motion.li>
-          <motion.li variants={childrenVariants} className="my-6">
-            <div className="p-2 rounded-lg flex items-center gap-4 cursor-pointer -skew-x-12 hover:bg-red-100">
-              <div className="p-2 rounded-lg bg-white aspect-square flex justify-center items-center">
-                <Image
-                  src="/icons/desserts.png"
-                  alt="desserts"
-                  width={32}
-                  height={32}
-                  className="aspect-square"
-                />
-              </div>
-              <h6 className="text-gray-500">Desserts</h6>
-            </div>
-          </motion.li>
+          <CategoryItem
+            name="Coffee"
+            image="coffee.png"
+            category={Category.Coffee}
+            selectedCategory={selectedCategory}
+            setSelectedCategory={setSelectedCategory}
+          />
+          <CategoryItem
+            name="Fast Food"
+            image="fast-food.png"
+            category={Category.FastFood}
+            selectedCategory={selectedCategory}
+            setSelectedCategory={setSelectedCategory}
+          />
+          <CategoryItem
+            name="Pizza"
+            image="pizza.png"
+            category={Category.Pizza}
+            selectedCategory={selectedCategory}
+            setSelectedCategory={setSelectedCategory}
+          />
+          <CategoryItem
+            name="Desi Menu"
+            image="desi-menu.png"
+            category={Category.DesiMenu}
+            selectedCategory={selectedCategory}
+            setSelectedCategory={setSelectedCategory}
+          />
+          <CategoryItem
+            name="Desserts"
+            image="desserts.png"
+            category={Category.Desserts}
+            selectedCategory={selectedCategory}
+            setSelectedCategory={setSelectedCategory}
+          />
         </motion.ul>
       </div>
       <motion.div
